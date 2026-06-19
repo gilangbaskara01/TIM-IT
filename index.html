@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PANEL TIM SLOT</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    padding:15px;
+}
+
+.container{
+    max-width:500px;
+    margin:auto;
+}
+
+.panel{
+    background:#1a1a1a;
+    border:2px solid gold;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 0 20px rgba(255,215,0,.3);
+}
+
+.title{
+    text-align:center;
+    color:gold;
+    font-size:32px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.info{
+    background:#222;
+    border-radius:10px;
+    padding:15px;
+    margin-bottom:15px;
+}
+
+.info p{
+    margin:8px 0;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+select{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.generate{
+    background:gold;
+    color:black;
+}
+
+.check{
+    background:#00bfff;
+    color:white;
+}
+
+.result{
+    margin-top:20px;
+    background:#222;
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
+}
+
+.result h2{
+    color:#00ff88;
+}
+
+.website-list{
+    margin-top:20px;
+}
+
+.website-list a{
+    display:block;
+    text-decoration:none;
+    background:#222;
+    color:white;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:10px;
+    text-align:center;
+    border:1px solid gold;
+}
+
+.website-list a:hover{
+    background:gold;
+    color:black;
+}
+
+.online{
+    color:#00ff88;
+    font-weight:bold;
+}
+
+.offline{
+    color:red;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="panel">
+
+<div class="title">
+PANEL TIM SLOT
+</div>
+
+<div class="info">
+
+<p>
+<b>USER NAME :</b>
+<span id="username"></span>
+</p>
+
+<p>
+<b>STATUS :</b>
+<span id="status"></span>
+</p>
+
+<p>
+<b>JAM :</b>
+<span id="clock"></span>
+</p>
+
+</div>
+
+<label>PROVIDER</label>
+
+<select id="provider">
+<option value="Pragmatic">Pragmatic</option>
+<option value="PG Soft">PG Soft</option>
+</select>
+
+<label>NAMA PERMAINAN</label>
+
+<select id="game"></select>
+
+<button class="generate" onclick="generateResult()">
+GENERATE RESULT
+</button>
+
+<button class="check" onclick="pilihSitus()">
+CHECK WEBSITE
+</button>
+
+<div class="result">
+
+<h2 id="hasil">
+Menunggu Generate...
+</h2>
+
+</div>
+
+<div class="result" id="websiteResult">
+Silakan pilih situs.
+</div>
+
+<div class="result">
+
+<h3 style="color:gold;">
+🎬 CHECKING HASIL 
+</h3>
+
+<select id="replaySelect">
+
+<option value="">
+-- CHECK HASIL --
+</option>
+
+<option value="https://www.ppreplaylink.net/MkS7JEgonG">
+HASIL 1
+</option>
+
+<option value="https://www.ppreplaylink.net/2HFPaCnobd">
+HASIL 2
+</option>
+
+<option value="https://www.ppreplaylink.net/7GUlh3WSVp">
+HASIL 3
+</option>
+
+<option value="https://www.ppreplaylink.net/Zpe55PdMWx">
+HASIL 4
+</option>
+
+<option value="https://www.ppreplaylink.net/3XRsOQnpoa">
+HASIL 5
+</option>
+
+<option value="https://www.ppreplaylink.net/8AulpFAR6Q">
+HASIL 6
+</option>
+
+</select>
+
+<button
+style="
+background:#00ff88;
+color:black;
+margin-top:10px;
+"
+onclick="bukaReplay()">
+
+BUKA REPLAY
+
+</button>
+
+</div>
+
+<div class="website-list">
+
+<a href="https://kilat77.org/account/register/190911685" target="_blank">
+KILAT77
+</a>
+
+<a href="https://barbar77.org/account/register/190911676" target="_blank">
+BARBAR77
+</a>
+
+<a href="https://permen138.org/account/register/190911681" target="_blank">
+PERMEN138
+</a>
+
+<a href="https://rp77.one/account/register/190911663" target="_blank">
+RP77
+</a>
+
+<a href="https://beruang69.me/account/register/190911655" target="_blank">
+BERUANG69
+</a>
+
+<a href="https://jos77.vip/account/register/190911704" target="_blank">
+JOS77
+</a>
+
+<a href="https://kilat777.net/account/register/190911617" target="_blank">
+KILAT777
+</a>
+
+<a href="https://bejo69.net/account/register/190911614" target="_blank">
+BEJO69
+</a>
+
+<a href="https://brutal77.org/account/register/197375921" target="_blank">
+BRUTAL77
+</a>
+
+<a href="https://damar-88a.kim/account/register/204463156" target="_blank">
+DAMAR88
+</a>
+
+<a href="https://klikbet77.org/account/register/204463103" target="_blank">
+KLIKBET77
+</a>
+
+<a href="https://jin69.org/account/register/204463030" target="_blank">
+JIN69
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const dataGame = {
+
+"Pragmatic":[
+"Gates of Olympus",
+"Starlight Princess",
+"Sweet Bonanza",
+"Sugar Rush",
+"The Dog House Megaways",
+"Big Bass Bonanza",
+"Fruit Party",
+"Wild West Gold",
+"Buffalo King Megaways",
+"Power of Thor Megaways",
+"Aztec Gems",
+"Joker's Jewels",
+"Mahjong Wins",
+"Zeus vs Hades - Gods of War",
+"Wisdom of Athena"
+],
+
+"PG Soft":[
+"Mahjong Ways",
+"Mahjong Ways 2",
+"Treasures of Aztec",
+"Lucky Neko",
+"Fortune Tiger",
+"Fortune Rabbit",
+"Fortune Ox",
+"Fortune Mouse",
+"Dragon Hatch",
+"Wild Bandito",
+"Candy Bonanza",
+"Medusa II",
+"Genie's 3 Wishes",
+"Caishen Wins",
+"Legend of Perseus"
+]
+
+};
+
+const provider = document.getElementById("provider");
+const game = document.getElementById("game");
+
+function loadGames(){
+
+game.innerHTML="";
+
+dataGame[provider.value].forEach(item=>{
+
+let option=document.createElement("option");
+
+option.value=item;
+option.text=item;
+
+game.appendChild(option);
+
+});
+
+}
+
+provider.addEventListener("change",loadGames);
+
+loadGames();
+
+const users=[
+"Rizky",
+"Dimas",
+"Andi",
+"Budi",
+"Fajar",
+"Rama",
+"Agus",
+"Rafael",
+"Yogi",
+"Putra"
+];
+
+document.getElementById("username").innerText=
+users[Math.floor(Math.random()*users.length)];
+
+if(Math.random()>0.3){
+
+document.getElementById("status").innerHTML=
+'<span class="online"> 🟢 ONLINE</span>';
+
+}else{
+
+document.getElementById("status").innerHTML=
+'<span class="offline">OFFLINE</span>';
+
+}
+
+setInterval(()=>{
+
+const now=new Date();
+
+document.getElementById("clock").innerText=
+now.toLocaleTimeString("id-ID");
+
+},1000);
+
+function generateResult(){
+
+const gameName=game.value;
+
+const persen=
+Math.floor(Math.random()*41)+60;
+
+document.getElementById("hasil").innerHTML=
+`
+${gameName}
+<br><br>
+HASIL RANDOM : ${persen}%
+`;
+
+}
+
+function pilihSitus(){
+
+const situs=[
+
+{
+nama:"KILAT77",
+link:"https://kilat77.org/account/register/190911685"
+},
+
+{
+nama:"BARBAR77",
+link:"https://barbar77.org/account/register/190911676"
+},
+
+{
+nama:"PERMEN138",
+link:"https://permen138.org/account/register/190911681"
+},
+
+{
+nama:"RP77",
+link:"https://rp77.one/account/register/190911663"
+},
+
+{
+nama:"BERUANG69",
+link:"https://beruang69.me/account/register/190911655"
+},
+
+{
+nama:"JOS77",
+link:"https://jos77.vip/account/register/190911704"
+},
+
+{
+nama:"KILAT777",
+link:"https://kilat777.net/account/register/190911617"
+},
+
+{
+nama:"BEJO69",
+link:"https://bejo69.net/account/register/190911614"
+},
+
+{
+nama:"BRUTAL77",
+link:"https://brutal77.org/account/register/197375921"
+},
+
+{
+nama:"DAMAR88",
+link:"https://damar-88a.kim/account/register/204463156"
+},
+
+{
+nama:"KLIKBET77",
+link:"https://klikbet77.org/account/register/204463103"
+},
+
+{
+nama:"JIN69",
+link:"https://jin69.org/account/register/204463030"
+}
+
+];
+
+const random=
+situs[Math.floor(Math.random()*situs.length)];
+
+document.getElementById("websiteResult").innerHTML=
+`
+<h3>${random.nama}</h3>
+
+<br>
+
+<a href="${random.link}" target="_blank"
+style="
+background:#00ff88;
+padding:10px 20px;
+border-radius:10px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+">
+KUNJUNGI SITUS
+</a>
+`;
+
+}
+
+function bukaReplay(){
+
+const url =
+document.getElementById("replaySelect").value;
+
+if(url){
+
+window.open(url,"_blank");
+
+}else{
+
+alert("Silakan pilih replay terlebih dahulu");
+
+}
+
+}
+
+</script>
+
+
+</body>
+</html>
